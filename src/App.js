@@ -59,7 +59,7 @@ const App = () => {
 					setMovies(tempMovies);
 				}
 			} else {
-				alert("Max movies(5) already nominated. Try removing some and retry");
+				alert("Max movies(5) already nominated. Try removing some and retry. Click 'OK' to continue");
 			}
 		}
 
