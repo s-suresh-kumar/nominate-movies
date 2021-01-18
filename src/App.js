@@ -44,7 +44,7 @@ const App = () => {
 		localStorage.setItem('react-movie-app-nominees', JSON.stringify(items));
 	};
 
-	const addFavouriteMovie = (movie) => {
+	const addNominee = (movie) => {
 		let newFavouriteList = [];
 		let newMovieList = [];
 		if (!(nominees.includes(movie))) {
@@ -65,7 +65,7 @@ const App = () => {
 
 	};
 
-	const removeFavouriteMovie = (movie) => {
+	const withdrawNomination = (movie) => {
 		const newFavouriteList = nominees.filter(
 			(favourite) => favourite.imdbID !== movie.imdbID
 		);
@@ -87,7 +87,7 @@ const App = () => {
 			<div className='row'>
 				<Movies
 					movies={nominees}
-					handleFavouritesClick={removeFavouriteMovie}
+					handleFavouritesClick={withdrawNomination}
 					favouriteComponent={WithdrawNomination}
 				/>
 			</div>
@@ -98,7 +98,7 @@ const App = () => {
 			<div className='row'>
 				<Movies
 					movies={movies}
-					handleFavouritesClick={addFavouriteMovie}
+					handleFavouritesClick={addNominee}
 					favouriteComponent={Nominate}
 				/>
 			</div>
