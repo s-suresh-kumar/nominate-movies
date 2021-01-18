@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Movies = (props) => {
-	const FavouriteComponent = props.favouriteComponent;
+	const NominateteComponent = props.nominateComponent;
 
 	return (
 		<>
@@ -9,10 +9,10 @@ const Movies = (props) => {
 				<div className='image-container d-flex flex-wrap justify-content-start m-3'>
 					<img src={movie.Poster} alt='movie'></img>
 					<div
-						onClick={() => props.handleFavouritesClick(movie)}
+						onClick={() => props.handleNominationClick(movie)}
 						className='overlay d-flex align-items-center justify-content-center'
 					>
-						<FavouriteComponent />
+						<NominateteComponent />
 					</div>
 				</div>
 			))}

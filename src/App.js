@@ -87,8 +87,8 @@ const App = () => {
 			<div className='row'>
 				<Movies
 					movies={nominees}
-					handleFavouritesClick={withdrawNomination}
-					favouriteComponent={WithdrawNomination}
+					handleNominationClick={withdrawNomination}
+					nominateComponent={WithdrawNomination}
 				/>
 			</div>
 			<div className='row d-flex align-items-center mt-4 mb-4'>
@@ -98,8 +98,8 @@ const App = () => {
 			<div className='row'>
 				<Movies
 					movies={movies}
-					handleFavouritesClick={addNominee}
-					favouriteComponent={Nominate}
+					handleNominationClick={addNominee}
+					nominateComponent={Nominate}
 				/>
 			</div>
 
