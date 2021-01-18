@@ -9,7 +9,7 @@ import WithdrawNomination from './components/WithdrawNomination';
 
 const App = () => {
 	const [movies, setMovies] = useState([]);
-	const [favourites, setFavourites] = useState([]);
+	const [nominees, setNominees] = useState([]);
 	const [searchValue, setSearchValue] = useState('');
 
 	const getMovieRequest = async (searchValue) => {
@@ -31,26 +31,26 @@ const App = () => {
 	}, [searchValue]);
 
 	useEffect(() => {
-		const movieFavourites = JSON.parse(
-			localStorage.getItem('react-movie-app-favourites')
+		const movieNominees = JSON.parse(
+			localStorage.getItem('react-movie-app-nominees')
 		);
 
-		if (movieFavourites) {
-			setFavourites(movieFavourites);
+		if (movieNominees) {
+			setNominees(movieNominees);
 		}
 	}, []);
 
 	const saveToLocalStorage = (items) => {
-		localStorage.setItem('react-movie-app-favourites', JSON.stringify(items));
+		localStorage.setItem('react-movie-app-nominees', JSON.stringify(items));
 	};
 
 	const addFavouriteMovie = (movie) => {
 		let newFavouriteList = [];
 		let newMovieList = [];
-		if (!(favourites.includes(movie))) {
-			if (favourites.length < 5) {
-				newFavouriteList = [...favourites, movie];
-				setFavourites(newFavouriteList);
+		if (!(nominees.includes(movie))) {
+			if (nominees.length < 5) {
+				newFavouriteList = [...nominees, movie];
+				setNominees(newFavouriteList);
 				saveToLocalStorage(newFavouriteList);
 				let tempMovies = movies.slice(0);
 				const index = tempMovies.indexOf(movie);
@@ -66,11 +66,11 @@ const App = () => {
 	};
 
 	const removeFavouriteMovie = (movie) => {
-		const newFavouriteList = favourites.filter(
+		const newFavouriteList = nominees.filter(
 			(favourite) => favourite.imdbID !== movie.imdbID
 		);
 
-		setFavourites(newFavouriteList);
+		setNominees(newFavouriteList);
 		saveToLocalStorage(newFavouriteList);
 		let newMovieList = [];
 		if (!(movies.includes(movie))) {
@@ -86,7 +86,7 @@ const App = () => {
 			</div>
 			<div className='row'>
 				<Movies
-					movies={favourites}
+					movies={nominees}
 					handleFavouritesClick={removeFavouriteMovie}
 					favouriteComponent={WithdrawNomination}
 				/>
