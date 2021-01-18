@@ -4,7 +4,7 @@ import './App.css';
 import Movies from './components/Movies';
 import CollectionHeading from './components/CollectionHeading';
 import SearchBox from './components/SearchBox';
-import AddFavourites from './components/AddFavourites';
+import Nominate from './components/Nominate';
 import RemoveFavourites from './components/RemoveFavourites';
 
 const App = () => {
@@ -99,7 +99,7 @@ const App = () => {
 				<Movies
 					movies={movies}
 					handleFavouritesClick={addFavouriteMovie}
-					favouriteComponent={AddFavourites}
+					favouriteComponent={Nominate}
 				/>
 			</div>
 
