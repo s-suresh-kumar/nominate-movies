@@ -5,7 +5,7 @@ import Movies from './components/Movies';
 import CollectionHeading from './components/CollectionHeading';
 import SearchBox from './components/SearchBox';
 import Nominate from './components/Nominate';
-import RemoveFavourites from './components/RemoveFavourites';
+import WithdrawNomination from './components/WithdrawNomination';
 
 const App = () => {
 	const [movies, setMovies] = useState([]);
@@ -88,7 +88,7 @@ const App = () => {
 				<Movies
 					movies={favourites}
 					handleFavouritesClick={removeFavouriteMovie}
-					favouriteComponent={RemoveFavourites}
+					favouriteComponent={WithdrawNomination}
 				/>
 			</div>
 			<div className='row d-flex align-items-center mt-4 mb-4'>

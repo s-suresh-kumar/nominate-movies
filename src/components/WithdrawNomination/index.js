@@ -1,6 +1,6 @@
 import React from 'react';
 
-const RemoveFavourites = () => {
+const WithdrawNomination = () => {
 	return (
 		<>
 			<span className='mr-2'>Withdraw Nomination</span>
@@ -25,4 +25,4 @@ const RemoveFavourites = () => {
 	);
 };
 
-export default RemoveFavourites;
+export default WithdrawNomination;
