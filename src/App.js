@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import MovieList from './components/MovieList';
+import Movies from './components/Movies';
 import MovieListHeading from './components/MovieListHeading';
 import SearchBox from './components/SearchBox';
 import AddFavourites from './components/AddFavourites';
@@ -85,7 +85,7 @@ const App = () => {
 				<MovieListHeading heading='Nominees' />
 			</div>
 			<div className='row'>
-				<MovieList
+				<Movies
 					movies={favourites}
 					handleFavouritesClick={removeFavouriteMovie}
 					favouriteComponent={RemoveFavourites}
@@ -96,7 +96,7 @@ const App = () => {
 				<SearchBox searchValue={searchValue} setSearchValue={setSearchValue} />
 			</div>
 			<div className='row'>
-				<MovieList
+				<Movies
 					movies={movies}
 					handleFavouritesClick={addFavouriteMovie}
 					favouriteComponent={AddFavourites}
